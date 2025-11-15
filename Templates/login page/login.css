@@ -1,0 +1,7 @@
+/* template/login.css - login specific overrides */
+.auth-card{max-width:380px;margin:0 auto}
+.tab{font-size:15px}
+.input input{font-size:14px}
+.btn.primary{background:var(--accent-yellow)}
+.btn.ghost{background:transparent;border:1px solid #e6e9f0}
+.pw-toggle{padding:4px;margin-left:6px}

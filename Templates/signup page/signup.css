@@ -1,0 +1,6 @@
+/* template/signup.css - signup specific overrides */
+.auth-card{max-width:380px;margin:0 auto}
+.tab{font-size:15px}
+.input input{font-size:14px}
+.btn.primary{background:var(--accent-yellow)}
+.input .pw-toggle{padding:4px;margin-left:6px}

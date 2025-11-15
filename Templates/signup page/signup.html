@@ -1,0 +1,54 @@
+<!-- template/signup.html -->
+<div class="auth-card center">
+  <div class="app-icon"><img src="assets/images/bg.png.jpg" alt="app" style="width:34px;height:34px"></div>
+  <div class="h1">Join TaskMaster</div>
+  <div class="h2">Create an account to boost your productivity</div>
+
+  <div class="tabs">
+    <div class="tab" data-link="login">Login</div>
+    <div class="tab active" data-active="signup">Sign Up</div>
+  </div>
+
+  <form id="signup-form" novalidate>
+    <div class="form-group">
+      <label class="muted">Full Name*</label>
+      <div class="input">
+        <img src="assets/images/icon-name.svg.png" alt="name">
+        <input type="text" id="signup-name" placeholder="John Doe" required>
+      </div>
+      <div id="signup-name-error" class="error" style="display:none"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="muted">Email Address*</label>
+      <div class="input">
+        <img src="assets/images/icon-email.svg.png" alt="email">
+        <input type="email" id="signup-email" placeholder="hello@example.com" required>
+      </div>
+      <div id="signup-email-error" class="error" style="display:none"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="muted">Password*</label>
+      <div class="input">
+        <img src="assets/images/icon-lock.svg.png" alt="password">
+        <input type="password" id="signup-password" placeholder="Password" minlength="6" required>
+        <div class="pw-toggle" id="signup-pw-toggle" title="Show password">
+        </div>
+      </div>
+      <div id="signup-password-error" class="helper">Password must be at least 6 characters long</div>
+    </div>
+
+    <div class="help-row">
+      <button type="button" class="btn ghost" id="help-signup">Help?
+        <img src="assets/images/icon-app.png.png" alt="toggle" style="width:16px;height:16px">
+      </button>
+      <button type="submit" class="btn primary">Create Account</button>
+    </div>
+
+    <div style="margin-top:12px" class="muted center">By continuing, you agree to our Terms of Service &amp; Privacy Policy</div>
+  </form>
+</div>
+
+<script src="template/signup page/signup.js"></script>
+<link rel="stylesheet" href="template/signup page/signup.css" />
