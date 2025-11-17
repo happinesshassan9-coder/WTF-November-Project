@@ -35,12 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if(!ok) return;
 
-    // Mock login: demo succeeds when email contains 'hello'
     mockLogin({email: email.value, password: password.value})
       .then(user => {
         App.setLoggedIn(user);
         alert('Login successful — demo only');
-        // In a full app you'd navigate to a dashboard
+      
       })
       .catch(err => {
         pwErr.textContent = err.message || 'Login failed';
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function mockLogin({email, password}){
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if(email.includes('hello')) resolve({name:'Demo User', email});
+        if(email.includes('@')) resolve({name:'Demo User', email});
         else reject(new Error('Invalid credentials for demo'));
       }, 500);
     });
