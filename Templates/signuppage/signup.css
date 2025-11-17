@@ -4,3 +4,11 @@
 .input input{font-size:14px}
 .btn.primary{background:var(--accent-yellow)}
 .input .pw-toggle{padding:4px;margin-left:6px}
+
+.label-left-bold{
+  text-align: left;   
+  font-weight: bold;   
+  color: black;       
+  display: block;      
+}
+

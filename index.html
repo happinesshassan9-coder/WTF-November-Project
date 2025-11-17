@@ -4,38 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TaskMaster</title>
-
-  <!-- Fonts / Global CSS -->
-  <link rel="preload" href="assets/fonts/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/CSS/global.css">
-
-  <!-- Page CSS (explicit, one after another) -->
-  <link rel="stylesheet" href="templates/login page/login.css">
-  <link rel="stylesheet" href="templates/signup page/signup.css">
 </head>
+
 <body>
   <div class="app-shell">
-    <!-- Templates will be injected here -->
     <div id="templates-root"></div>
-
-    <!-- Footer -->
-    <div class="footer">© 2024 TaskMaster | Made for University Students</div>
   </div>
 
   <!-- Global JS (App helper) -->
   <script src="assets/js/global.js"></script>
 
-  <!-- Page JS (explicit) -->
-  <script src="templates/login page/login.js" defer></script>
-  <script src="templates/signup page/signup.js" defer></script>
-
-  <!-- Loader: fetch and inject external HTML templates (login.html, signup.html) -->
   <script>
     (function loadTemplates() {
       const root = document.getElementById('templates-root');
       const templates = [
-        { path: 'templates/login page/login.html', id: 'login-template' },
-        { path: 'templates/signup page/signup.html', id: 'signup-template' }
+        { path: 'templates/loginpage/login.html', id: 'login-template' },
+        { path: 'templates/signuppage/signup.html', id: 'signup-template' }
       ];
 
       // Helper: fetch one file and return its text
