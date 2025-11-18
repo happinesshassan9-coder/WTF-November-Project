@@ -40,13 +40,13 @@ window.addEventListener('DOMContentLoaded', () => {
     if (form.id === 'login-form') {
       e.preventDefault();
       const email = document.getElementById('login-email')?.value;
-      console.log('Login submit captured (fallback). Email:', email);
+      console.log('Email:', email);
     }
     if (form.id === 'signup-form') {
       e.preventDefault();
       const email = document.getElementById('signup-email')?.value;
       const name = document.getElementById('signup-name')?.value;
-      console.log('Signup submit captured (fallback). Name/Email:', name, email);
+      console.log('Name/Email:', name, email);
     }
   }, true);
 });
