@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const to = t.getAttribute('data-link');
     if (to === 'signup') App.show('signup-template');
     if (to === 'login') App.show('login-template');
-    if (to === 'help') alert('Help is a demo button. In a real app this would open support docs.');
+    if (to === 'help') alert('Help is a demo button');
   });
 
   // Fallback: log any form submission by ID
