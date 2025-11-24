@@ -1,0 +1,122 @@
+<!-- templates/dashboard/dashboard.html -->
+<link rel="stylesheet" href="templates/dashboard/dashboard.css">
+<link rel="stylesheet" href="components/sidebar.html">
+
+<div class="dashboard-root">
+
+  <!-- SIDEBAR IMPORT -->
+  <div id="sidebar-root">
+    <div id="sidebar-placeholder" data-include="components/sidebar.html"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+      <div class="welcome">
+        <div class="welcome-title">
+          Welcome back, <span id="dash-username">User</span>
+        </div>
+        <div class="welcome-sub muted">
+          Here's what's happening with your productivity
+        </div>
+      </div>
+    </header>
+
+    <!-- OVERVIEW CARDS -->
+    <section class="overview-grid" id="overview-grid">
+
+      <div class="stat-card">
+        <div class="stat-title">
+          <img src="assets/images/task.png" alt="tasks" width="20" height="20"> 
+          <span>Active Tasks</span>
+        </div>
+        <div class="stat-value" id="stat-tasks">0</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">
+          <img src="assets/images/expense.png" alt="expenses" width="20" height="20">
+          <span>Total Expenses</span>
+        </div>
+        <div class="stat-value" id="stat-expenses">$0.00</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">
+          <img src="assets/images/notes.png" alt="notes" width="20" height="20">
+          <span>Total Notes</span>
+        </div>
+        <div class="stat-value" id="stat-notes">0</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">
+          <img src="assets/images/statistics.png" alt="completion rate" width="20" height="20">
+          <span>Completion Rate</span>
+        </div>
+        <div class="stat-value" id="stat-completion">0%</div>
+      </div>
+
+    </section>
+
+    <!-- RECENT TASKS -->
+    <section class="recent-tasks">
+      <div class="section-title">
+        <img src="assets/images/task.png" alt="recent tasks" width="20" height="20">
+        <span>Recent Tasks</span>
+      </div>
+      <div id="recent-list" class="muted">No tasks yet.</div>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="quick-actions">
+      <div class="section-title">
+        <img src="assets/images/statistics.png" alt="quick actions" width="20" height="20">
+        <span>Quick Actions</span>
+      </div>
+
+      <!-- DROPDOWN STYLE QUICK MENU -->
+      <div class="quick-actions-wrapper">
+
+        <div class="quick-menu">
+
+          <button class="quick-item" data-action="new-task">
+            <img src="assets/images/task.png" alt="create task" width="20" height="20">
+            <span>Create New Task</span>
+          </button>
+
+          <button class="quick-item" data-action="track-expense">
+            <img src="assets/images/expense.png" alt="track expense" width="20" height="20">
+            <span>Track Expense</span>
+          </button>
+
+          <button class="quick-item" data-action="write-note">
+            <img src="assets/images/notes.png" alt="write note" width="20" height="20">
+            <span>Write Note</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Optional grid-style quick items -->
+      <div class="quick-grid" id="quick-actions-container"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="templates/dashboard/dashboard.js"></script>
+
+<script>
+/* Load sidebar */
+document.addEventListener("DOMContentLoaded", () => {
+  const include = document.querySelector("[data-include]");
+  if (include) {
+    fetch(include.getAttribute("data-include"))
+      .then(res => res.text())
+      .then(html => include.innerHTML = html);
+  }
+});
+</script>

@@ -1,0 +1,146 @@
+/* ============================
+   APP SIDEBAR - VERTICAL LAYOUT
+============================ */
+
+.app-sidebar {
+  height: 100vh; /* full viewport height */
+  width: 240px; /* default width */
+  background: linear-gradient(180deg, #ffffff, #fbfbff);
+  display: flex;
+  flex-direction: column; /* vertical stack */
+  justify-content: flex-start;
+  padding: 18px;
+  box-shadow: 2px 0 12px rgba(15, 23, 42, 0.04);
+  gap: 24px;
+  transition: width 0.3s ease;
+}
+
+/* ============================
+   PROFILE BLOCK (TOP)
+============================ */
+.profile-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.profile-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-name {
+  font-weight: 600;
+}
+
+.p-email {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ============================
+   NAVIGATION (VERTICAL)
+============================ */
+.nav {
+  display: flex;
+  flex-direction: column; /* vertical stack */
+  gap: 12px;              /* spacing between nav items */
+  flex-grow: 1;            /* take available vertical space */
+  margin-top: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--accent);
+}
+
+.nav-item.active {
+  background: rgba(79, 70, 229, 0.15);
+  color: var(--accent);
+}
+
+.nav-item .icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.nav-item .label {
+  white-space: nowrap;
+}
+
+/* ============================
+   LOGOUT BUTTON (BOTTOM)
+============================ */
+.logout {
+  margin-top: auto; /* stick to bottom */
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================
+   COLLAPSED SIDEBAR
+============================ */
+.app-sidebar.collapsed {
+  width: 70px; /* collapsed width */
+}
+
+.app-sidebar.collapsed .profile-text,
+.app-sidebar.collapsed .p-email,
+.app-sidebar.collapsed .nav-item .label {
+  display: none; /* hide text labels */
+}
+
+.app-sidebar.collapsed .profile-img {
+  width: 40px;
+  height: 40px;
+}
+
+.app-sidebar.collapsed .sidebar-toggle {
+  right: 6px;
+}

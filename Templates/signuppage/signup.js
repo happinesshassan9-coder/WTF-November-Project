@@ -1,4 +1,4 @@
-// template/signup.js
+/* templates/signuppage/signup.js */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('signup.js loaded');
 
@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(user => {
         App.setLoggedIn(user);
         console.log('Account created — demo only');
-        App.show('login-template');
+        // show dashboard
+        App.show('dashboard-template');
       })
       .catch(err => {
         emailErr.textContent = err.message || 'Signup failed';

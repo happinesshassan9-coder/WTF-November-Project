@@ -1,0 +1,63 @@
+<!-- components/button.html -->
+<style>
+  .cmp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    border: 0;
+    background: var(--card-bg);
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(15,23,36,0.04);
+  }
+
+  .cmp-btn[data-variant="primary"] {
+    background: var(--accent-yellow);
+    color: #111;
+  }
+
+  .cmp-btn[data-variant="ghost"] {
+    background: transparent;
+    border: 1px solid #e6e9f0;
+    color: var(--text);
+  }
+
+  .cmp-btn.icon {
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    justify-content: center;
+    border-radius: 10px;
+    background: transparent;
+  }
+
+  .cmp-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .cmp-btn[data-size="small"] {
+    padding: 6px 8px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="cmp-btn" data-variant="primary" role="button" tabindex="0" data-action="primary">
+  <span class="cmp-btn-label">Primary</span>
+</div>
+
+<div class="cmp-btn" data-variant="ghost" role="button" tabindex="0" data-action="ghost">
+  <span class="cmp-btn-label">Ghost</span>
+</div>
+
+<button class="cmp-btn icon" data-variant="icon" aria-label="Icon action" data-action="icon">
+  <img src="assets/icons/icon-task.png" alt="">
+</button>

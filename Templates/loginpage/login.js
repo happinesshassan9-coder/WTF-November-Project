@@ -1,4 +1,4 @@
-// template/login.js
+/* templates/loginpage/login.js */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('login.js loaded');
 
@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(user => {
         App.setLoggedIn(user);
         console.log('Login successful — demo only');
+        // show dashboard
+        App.show('dashboard-template');
       })
       .catch(err => {
         if (pwErr) {
