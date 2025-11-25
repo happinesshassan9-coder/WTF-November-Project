@@ -1,18 +1,17 @@
 <!-- templates/dashboard/dashboard.html -->
+
 <link rel="stylesheet" href="templates/dashboard/dashboard.css">
-<link rel="stylesheet" href="components/sidebar.html">
 
 <div class="dashboard-root">
 
-  <!-- SIDEBAR IMPORT -->
-  <div id="sidebar-root">
+  <div id="app-sidebar">
     <div id="sidebar-placeholder" data-include="components/sidebar.html"></div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  
   <main class="dashboard-main">
 
-    <!-- HEADER -->
+    
     <header class="dashboard-header">
       <div class="welcome">
         <div class="welcome-title">
@@ -24,7 +23,7 @@
       </div>
     </header>
 
-    <!-- OVERVIEW CARDS -->
+    
     <section class="overview-grid" id="overview-grid">
 
       <div class="stat-card">
@@ -61,7 +60,7 @@
 
     </section>
 
-    <!-- RECENT TASKS -->
+    
     <section class="recent-tasks">
       <div class="section-title">
         <img src="assets/images/task.png" alt="recent tasks" width="20" height="20">
@@ -70,14 +69,14 @@
       <div id="recent-list" class="muted">No tasks yet.</div>
     </section>
 
-    <!-- QUICK ACTIONS -->
+    
     <section class="quick-actions">
       <div class="section-title">
         <img src="assets/images/statistics.png" alt="quick actions" width="20" height="20">
         <span>Quick Actions</span>
       </div>
 
-      <!-- DROPDOWN STYLE QUICK MENU -->
+      
       <div class="quick-actions-wrapper">
 
         <div class="quick-menu">
@@ -100,7 +99,7 @@
         </div>
       </div>
 
-      <!-- Optional grid-style quick items -->
+      
       <div class="quick-grid" id="quick-actions-container"></div>
     </section>
 
@@ -108,6 +107,9 @@
 </div>
 
 <script src="templates/dashboard/dashboard.js"></script>
+
+
+ 
 
 <script>
 /* Load sidebar */
