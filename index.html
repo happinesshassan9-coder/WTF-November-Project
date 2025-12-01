@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TaskMaster</title>
-  <link rel="stylesheet" href="assets/CSS/global.css">
+<link rel="stylesheet" href="assets/CSS/global.css">
+  <link rel="stylesheet" href="templates/dashboard/dashboard.css">
   <link rel="stylesheet" href="templates/background/background.css">
 </head>
 
@@ -22,7 +23,11 @@
       const templates = [
         { path: 'templates/loginpage/login.html', id: 'login-template' },
         { path: 'templates/signuppage/signup.html', id: 'signup-template' },
-        { path: 'templates/dashboard/dashboard.html', id: 'dashboard-template' }
+        { path: 'templates/dashboard/dashboard.html', id: 'dashboard-template' },
+         { path: 'templates/tasks/tasks.html', id: 'tasks-template' },
+          { path: 'templates/community/community.html', id: 'communuity-template'},
+      
+      
       ];
 
       function fetchText(path){

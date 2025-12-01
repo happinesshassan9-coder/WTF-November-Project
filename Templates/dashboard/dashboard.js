@@ -1,46 +1,29 @@
-// Must be treated as a module: <script type="module" src="dashboard.js"></script>
-import { sidebarHTML } from '../../components/sidebar.js';
+// SIDEBAR MENU CLICKABLE
+const menuItems = document.querySelectorAll('.menu li');
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('dashboard.js loaded');
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remove 'active' class from all menu items
+        menuItems.forEach(i => i.classList.remove('active'));
 
-  // Inject sidebar into placeholder
-  const sidebarPlaceholder = document.getElementById('sidebar-placeholder');
-  if (sidebarPlaceholder) {
-    sidebarPlaceholder.innerHTML = sidebarHTML;
-    initSidebar();
-  }
+        // Add 'active' class to clicked item
+        item.classList.add('active');
 
-  // Populate user info
-  const user = App?.getLoggedIn?.();
-  const nameEl = document.getElementById('dash-username');
-  if (user && nameEl) {
-    nameEl.textContent = user.name || user.email || 'User';
-  }
+        // Determine redirection based on menu text
+        const menuName = item.textContent.trim();
+        let page = '#'; // default fallback
 
-  // Sidebar initialization
-  function initSidebar() {
-    const sidebar = document.querySelector('.app-sidebar');
-    if (!sidebar) return;
-
-    // Nav links
-    sidebar.querySelectorAll('[data-link]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const to = btn.getAttribute('data-link');
-        if (to === 'logout') {
-          App?.logout?.();
-        } else {
-          alert('Navigate to ' + to + ' — demo');
+        if (menuName === 'Dashboard') {
+            page = '/templates/dashboard/dashboard.html';
+        } else if (menuName === 'Community') {
+            page = '/templates/community/community.html';
+        } else if (menuName === 'Tasks') {
+            page = '/templates/tasks/tasks.html';
         }
-      });
-    });
 
-    // Toggle sidebar
-    const toggleBtn = sidebar.querySelector('.sidebar-toggle');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-      });
-    }
-  }
+        // Redirect if a valid page is set
+        if (page && page !== '#') {
+            window.location.href = page;
+        }
+    });
 });

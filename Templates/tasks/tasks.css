@@ -1,0 +1,219 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #ffffff;
+    height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar .brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #6c63ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu li.active,
+.menu li:hover {
+    background: #e8e8ff;
+}
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.sidebar.collapsed .brand-text,
+.sidebar.collapsed .user-info,
+.sidebar.collapsed ul.menu li span,
+.sidebar.collapsed .logout span {
+    display: none;
+}
+
+.logout {
+    margin-top: 30px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.logout:hover {
+    background: #e8e8ff;
+}
+
+.logout img.menu-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+/* TOPBAR */
+.topbar {
+    background: #fff;
+    padding: 15px 25px;
+    height: 60px;
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    position: fixed;
+}
+
+.sidebar.collapsed ~ .topbar {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.task-container {
+    margin-left: 220px;
+    margin-top: 80px;
+    padding: 20px;
+    width: calc(100% - 220px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.collapsed ~ .task-container {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.add-task-btn {
+    padding: 8px 15px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.task-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.task-card {
+    background: #fff;
+    padding: 15px;
+    width: 180px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.07);
+}
+
+.task-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.task-list .task-item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.small-icon {
+    width: 18px;
+    height: 18px;
+}

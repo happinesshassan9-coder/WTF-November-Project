@@ -1,124 +1,146 @@
-<!-- templates/dashboard/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
 
-<link rel="stylesheet" href="templates/dashboard/dashboard.css">
+<body>
 
-<div class="dashboard-root">
+<div class="container">
 
-  <div id="app-sidebar">
-    <div id="sidebar-placeholder" data-include="components/sidebar.html"></div>
-  </div>
-
-  
-  <main class="dashboard-main">
-
-    
-    <header class="dashboard-header">
-      <div class="welcome">
-        <div class="welcome-title">
-          Welcome back, <span id="dash-username">User</span>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
+            <span class="brand-text">TaskMaster</span>
         </div>
-        <div class="welcome-sub muted">
-          Here's what's happening with your productivity
+
+        <div class="user-box">
+            <div class="avatar">H</div>
+            <div class="user-info">
+                <h4>Happiness Hassan</h4>
+                <p>happinesshassan9@gmail.com</p>
+            </div>
         </div>
-      </div>
-    </header>
 
-    
-    <section class="overview-grid" id="overview-grid">
+        <ul class="menu">
+            <li class="active"><img class="menu-icon" src="assets/images/dashboard.png" alt=""><span>Dashboard</span></li>
+            <li><img class="menu-icon" src="assets/images/task.png" alt=""><span>Tasks</span></li> 
+            <li><img class="menu-icon" src="assets/images/community.png" alt=""><span>Community</span></li>
+            <li><img class="menu-icon" src="assets/images/expense.png" alt=""><span>Expenses</span></li>
+            <li><img class="menu-icon" src="assets/images/notes.png" alt=""><span>Notes</span></li>
+            <li><img class="menu-icon" src="assets/images/settings (9).png" alt=""><span>Settings</span></li>
+        </ul>
 
-      <div class="stat-card">
-        <div class="stat-title">
-          <img src="assets/images/task.png" alt="tasks" width="20" height="20"> 
-          <span>Active Tasks</span>
-        </div>
-        <div class="stat-value" id="stat-tasks">0</div>
-      </div>
+        <button class="logout">
+            <img class="menu-icon" src="assets/images/logout.png" alt="">
+            <span>Logout</span>
+        </button>
+    </aside>
 
-      <div class="stat-card">
-        <div class="stat-title">
-          <img src="assets/images/expense.png" alt="expenses" width="20" height="20">
-          <span>Total Expenses</span>
-        </div>
-        <div class="stat-value" id="stat-expenses">$0.00</div>
-      </div>
+    <!-- MAIN CONTENT -->
+    <main class="dashboard">
 
-      <div class="stat-card">
-        <div class="stat-title">
-          <img src="assets/images/notes.png" alt="notes" width="20" height="20">
-          <span>Total Notes</span>
-        </div>
-        <div class="stat-value" id="stat-notes">0</div>
-      </div>
+        <h1>Good morning, Happiness Hassan!</h1>
+        <p class="subtitle">Here's what's happening with your productivity today</p>
 
-      <div class="stat-card">
-        <div class="stat-title">
-          <img src="assets/images/statistics.png" alt="completion rate" width="20" height="20">
-          <span>Completion Rate</span>
-        </div>
-        <div class="stat-value" id="stat-completion">0%</div>
-      </div>
+        <div class="stats-grid">
 
-    </section>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">
+                        <img class="stat-icon" src="assets/images/task.png" alt="statistics">
+                        Active Tasks
+                    </span>
+                </div>
+                <h2>0</h2>
+                <p>0 completed</p>
+            </div>
 
-    
-    <section class="recent-tasks">
-      <div class="section-title">
-        <img src="assets/images/task.png" alt="recent tasks" width="20" height="20">
-        <span>Recent Tasks</span>
-      </div>
-      <div id="recent-list" class="muted">No tasks yet.</div>
-    </section>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">
+                        <img class="stat-icon" src="assets/images/expense.png" alt="Expenses">
+                        Total Expenses
+                    </span>
+                </div>
+                <h2>$0.00</h2>
+                <p>This period</p>
+            </div>
 
-    
-    <section class="quick-actions">
-      <div class="section-title">
-        <img src="assets/images/statistics.png" alt="quick actions" width="20" height="20">
-        <span>Quick Actions</span>
-      </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">
+                        <img class="stat-icon" src="assets/images/notes.png" alt="notes">
+                        Total Notes
+                    </span>
+                </div>
+                <h2>0</h2>
+                <p>Saved notes</p>
+            </div>
 
-      
-      <div class="quick-actions-wrapper">
-
-        <div class="quick-menu">
-
-          <button class="quick-item" data-action="new-task">
-            <img src="assets/images/task.png" alt="create task" width="20" height="20">
-            <span>Create New Task</span>
-          </button>
-
-          <button class="quick-item" data-action="track-expense">
-            <img src="assets/images/expense.png" alt="track expense" width="20" height="20">
-            <span>Track Expense</span>
-          </button>
-
-          <button class="quick-item" data-action="write-note">
-            <img src="assets/images/notes.png" alt="write note" width="20" height="20">
-            <span>Write Note</span>
-          </button>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="stat-title">
+                        <img class="stat-icon" src="assets/images/statistics.png" alt="completion icon">
+                        Completion Rate
+                    </span>
+                </div>
+                <h2>0%</h2>
+                <p>Task completion</p>
+            </div>
 
         </div>
-      </div>
 
-      
-      <div class="quick-grid" id="quick-actions-container"></div>
-    </section>
+        <div class="lower-section">
+            
+            <div class="recent-tasks">
+                <div class="rt-header">
+                    <img class="stat-icon" src="assets/images/task.png" alt="task">
+                    <span>Recent Tasks</span>
+                </div>
 
-  </main>
+                <div class="empty-box">
+                    <p>No tasks yet</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+
+                <div class="qa-item">
+                    <img src="assets/images/task.png" alt="Action task">
+                    <div>
+                        <h4>Create New Task</h4>
+                        <p>Add a task to your list</p>
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <img src="assets/images/expense.png" alt="expenses">
+                    <div>
+                        <h4>Track Expense</h4>
+                        <p>Record a new expense</p>
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <img src="assets/images/notes.png" alt="notes">
+                    <div>
+                        <h4>Write Note</h4>
+                        <p>Capture your thoughts</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
 </div>
 
-<script src="templates/dashboard/dashboard.js"></script>
-
-
- 
-
-<script>
-/* Load sidebar */
-document.addEventListener("DOMContentLoaded", () => {
-  const include = document.querySelector("[data-include]");
-  if (include) {
-    fetch(include.getAttribute("data-include"))
-      .then(res => res.text())
-      .then(html => include.innerHTML = html);
-  }
-});
-</script>
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Page</title>
+    <link rel="stylesheet" href="tasks.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
+            <span class="brand-text">TaskMaster</span>
+        </div>
+
+        <div class="user-box">
+            <div class="avatar">H</div>
+            <div class="user-info">
+                <h4>Happiness Hassan</h4>
+                <p>happinesshassan9@gmail.com</p>
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li data-link="dashboard.html">
+                <img class="menu-icon" src="assets/images/dashboard.png" alt="Dashboard Icon">
+                <span>Dashboard</span>
+            </li>
+
+            <li data-link="tasks.html" class="active">
+                <img class="menu-icon" src="assets/images/task.png" alt="Tasks Icon">
+                <span>Tasks</span>
+            </li>
+
+            <li data-link="community.html">
+                <img class="menu-icon" src="assets/images/community.png" alt="Community Icon">
+                <span>Community</span>
+            </li>
+
+            <li data-link="#">
+                <img class="menu-icon" src="assets/images/expense.png" alt="Expenses Icon">
+                <span>Expenses</span>
+            </li>
+
+            <li data-link="#">
+                <img class="menu-icon" src="assets/images/notes.png" alt="Notes Icon">
+                <span>Notes</span>
+            </li>
+
+            <li data-link="#">
+                <img class="menu-icon" src="assets/images/settings (9).png" alt="Settings Icon">
+                <span>Settings</span>
+            </li>
+        </ul>
+
+        <button class="logout">
+            <img class="menu-icon" src="assets/images/logout.png" alt="Logout Icon">
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <button class="toggle-btn">&#9776;</button>
+        <h2>Tasks</h2>
+    </header>
+
+    <!-- MAIN TASK CONTENT -->
+    <main class="task-container">
+
+        <div class="task-header">
+            <h3>All Tasks</h3>
+            <button class="add-task-btn">+ Add Task</button>
+        </div>
+
+        <div class="task-stats">
+            <div class="task-card">
+                <img src="assets/images/progress.png" class="task-icon" alt="In Progress Icon">
+                <div>
+                    <h4>In Progress</h4>
+                    <p>8 tasks</p>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <img src="assets/images/completed.png" class="task-icon" alt="Completed Icon">
+                <div>
+                    <h4>Completed</h4>
+                    <p>12 tasks</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="task-list">
+            <h3>Recent Tasks</h3>
+
+            <div class="task-item">
+                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <span>Design homepage UI</span>
+            </div>
+
+            <div class="task-item">
+                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <span>Create user onboarding flow</span>
+            </div>
+
+            <div class="task-item">
+                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <span>Optimize dashboard responsiveness</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="tasks.js"></script>
+</body>
+</html>
