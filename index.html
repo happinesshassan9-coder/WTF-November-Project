@@ -2,67 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TaskMaster</title>
-<link rel="stylesheet" href="assets/CSS/global.css">
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="assets/CSS/global.css">
+
+  <!-- Page-level Template Styles -->
   <link rel="stylesheet" href="templates/dashboard/dashboard.css">
   <link rel="stylesheet" href="templates/background/background.css">
 </head>
 
 <body>
-  
+
   <div class="app-shell">
     <div id="templates-root"></div>
   </div>
-  
+
+  <!-- Global JS -->
   <script src="assets/js/global.js"></script>
- 
+
+  <!-- Your main JS (combined sidebar + community + dashboard nav) -->
+  <script src="dashboard.js"></script>
+
   <script>
     (function loadTemplates() {
-      const root = document.getElementById('templates-root');
+      const root = document.getElementById("templates-root");
+
+      // Each template is now responsible for bringing its own sidebar (inside its HTML file)
       const templates = [
-        { path: 'templates/loginpage/login.html', id: 'login-template' },
-        { path: 'templates/signuppage/signup.html', id: 'signup-template' },
-        { path: 'templates/dashboard/dashboard.html', id: 'dashboard-template' },
-         { path: 'templates/tasks/tasks.html', id: 'tasks-template' },
-          { path: 'templates/community/community.html', id: 'communuity-template'},
-      
-      
+        { path: "templates/loginpage/login.html",       id: "login-template" },
+        { path: "templates/signuppage/signup.html",     id: "signup-template" },
+        { path: "templates/dashboard/dashboard.html",   id: "dashboard-template" },
+        { path: "templates/tasks/tasks.html",           id: "tasks-template" },
+        { path: "templates/community/community.html",   id: "community-template" },
       ];
 
-      function fetchText(path){
+      function fetchText(path) {
         return fetch(path).then(res => {
-          if (!res.ok) throw new Error('Failed to load ' + path);
+          if (!res.ok) throw new Error("Failed to load " + path);
           return res.text();
         });
       }
 
-      Promise.all(templates.map(t => fetchText(t.path).then(html => ({ id: t.id, html })) ))
-        .then(results => {
-          results.forEach(r => {
-            const wrapper = document.createElement('div');
-            wrapper.id = r.id;
-            wrapper.className = 'template';
-            wrapper.style.display = 'none';
-            wrapper.innerHTML = r.html;
-            root.appendChild(wrapper);
-          });
-
-          // After templates injected, initialize default view
-          if (window.App && typeof App.show === 'function') {
-            const logged = App.getLoggedIn();
-            if (logged) App.show('dashboard-template');
-            else App.show('login-template');
-          } else {
-            const first = document.getElementById('login-template');
-            if (first) first.style.display = 'block';
-          }
-        })
-        .catch(err => {
-          root.innerHTML = '';
-          console.error(err);
+      // Load the templates
+      Promise.all(
+        templates.map(t => 
+          fetchText(t.path).then(html => ({ id: t.id, html }))
+        )
+      )
+      .then(results => {
+        results.forEach(result => {
+          const wrapper = document.createElement("div");
+          wrapper.id = result.id;
+          wrapper.className = "template";
+          wrapper.style.display = "none";
+          wrapper.innerHTML = result.html;
+          root.appendChild(wrapper);
         });
+
+        // Default view — login or dashboard
+        const loggedIn = window.App?.getLoggedIn?.();
+        const defaultView = loggedIn ? "dashboard-template" : "login-template";
+
+        const firstView = document.getElementById(defaultView);
+        if (firstView) firstView.style.display = "block";
+
+        // IMPORTANT:
+        // We REMOVE the old sidebar.js injection completely
+        // because each template now has its own sidebar inside it.
+      })
+      .catch(error => {
+        console.error(error);
+        root.innerHTML = "<p>Error loading templates.</p>";
+      });
     })();
   </script>
+
 </body>
 </html>

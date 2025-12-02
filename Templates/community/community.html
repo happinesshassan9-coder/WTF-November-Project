@@ -1,62 +1,104 @@
-<!-- templates/community/community.html -->
-<link rel="stylesheet" href="templates/community/community.css" />
-<div class="page" id="community-page">
-  <div class="page-header">
-    <div>
-      <div class="page-title">Community Board</div>
-      <div class="page-subtitle">Collaborate with your team</div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster Community</title>
 
-  <div class="card">
-    <div class="row" style="margin-bottom:12px">
-      <div class="avatar">HH</div>
-      <input id="community-input" class="input" style="flex:1" placeholder="Share an update, ask for help, or celebrate a win... (Mention @comsq to get AI help)">
-    </div>
-    <div class="row" style="justify-content:flex-end">
-      <button id="community-post" class="btn primary">Post</button>
-    </div>
-  </div>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
 
-  <div class="list" id="community-list" style="margin-top:14px">
-    <!-- Example posts similar to screenshot -->
-    <div class="post">
-      <div class="meta">
-        <div class="avatar">HH</div>
-        <div class="row">
-          <strong>Happiness Hassan</strong>
-          <span class="muted">happinesshassan9@gmail.com</span>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
+            <span class="brand-text">TaskMaster</span>
         </div>
-      </div>
-      <div class="muted">Share an update, ask for help, or celebrate a win... (Mention @comsq to get AI help)</div>
+
+        <div class="user-box">
+            <div class="avatar">H</div>
+            <div class="user-info">
+                <h4>Happiness Hassan</h4>
+                <p>happinesshassan9@gmail.com</p>
+            </div>
+        </div>
+
+       <ul class="menu">
+  <li data-link="dashboard.html" class="active">
+    <img class="menu-icon" src="assets/images/dashboard.png" alt="">
+    <span>Dashboard</span>
+  </li>
+  <li data-link="tasks.html">
+    <img class="menu-icon" src="assets/images/task.png" alt="">
+    <span>Tasks</span>
+  </li>
+  <li data-link="community.html">
+    <img class="menu-icon" src="assets/images/community.png" alt="">
+    <span>Community</span>
+  </li>
+  <li data-link="expenses.html">
+    <img class="menu-icon" src="assets/images/expense.png" alt="">
+    <span>Expenses</span>
+  </li>
+  <li data-link="notes.html">
+    <img class="menu-icon" src="assets/images/notes.png" alt="">
+    <span>Notes</span>
+  </li>
+  <li data-link="settings.html">
+    <img class="menu-icon" src="assets/images/settings.png" alt="">
+    <span>Settings</span>
+  </li>
+</ul>
+
+        <button class="logout">
+            <img class="menu-icon" src="assets/images/logout.png" alt="">
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- MAIN COMMUNITY SECTION -->
+    <div class="main">
+        <div class="community-container">
+            <div class="header">
+                <h2>Community Board</h2>
+                <p>Collaborate with your team</p>
+            </div>
+
+            <div class="post-box">
+                <div class="feed-user">
+                    <div class="feed-avatar">HH</div>
+                    <p>Share an update, ask for help, or celebrate a win...</p>
+                </div>
+                <textarea class="post-input" placeholder="Write something..."></textarea>
+                <button class="post-btn">Post</button>
+            </div>
+
+            <div class="feed-item">
+                <div class="feed-user">
+                    <div class="feed-avatar">P</div>
+                    <strong>Paulina</strong>
+                    <span class="feed-time">1d ago</span>
+                </div>
+                <p>...</p>
+            </div>
+
+            <div class="feed-item">
+                <div class="feed-user">
+                    <div class="feed-avatar">AI</div>
+                    <strong>Comsq AI</strong><span class="feed-time">2d ago</span>
+                </div>
+                <p>
+                    Hey there! 👋 That's an ambitious goal!... (trimmed for demo)
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="post">
-      <div class="meta">
-        <div class="avatar">P</div>
-        <strong>Paulina</strong>
-      </div>
-      <div class="muted">..</div>
-    </div>
+    <!-- JS FILE -->
+     <script src="assets/js/sidebar.js"></script>
+    <script src="community.js"></script>
 
-    <div class="post">
-      <div class="meta">
-        <div class="avatar">AI</div>
-        <strong>Comsq AI</strong>
-        <span class="badge">AI Assistant</span>
-      </div>
-      <div>
-        Hey there! 👋 That’s an ambitious goal! While making $1 million in 24 hours is incredibly rare and usually involves extreme luck or a very specific, already established business, I can help you with strategies to boost your productivity and income potential over time.
-        <br><br>
-        To get closer to significant financial goals, focus on:
-        <ul>
-          <li><strong>High-Value Skills:</strong> Identify and hone skills that are in high demand and command good rates.</li>
-          <li><strong>Strategic Planning:</strong> Break down large goals into smaller, actionable steps. Use TaskMaster to create daily, weekly, and monthly tasks.</li>
-          <li><strong>Consistent Effort:</strong> Regular, focused work on income-generating activities is key.</li>
-          <li><strong>Networking:</strong> Connect with people who can offer opportunities or insights.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="templates/community/community.js"></script>
+</body>
+</html>

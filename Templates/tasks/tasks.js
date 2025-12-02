@@ -1,37 +1,26 @@
-// COLLAPSE SIDEBAR
-const sidebar = document.querySelector('.sidebar');
-const toggleBtn = document.querySelector('.toggle-btn');
+(function(){
+  function initTasks(wrapper) {
+    if (!wrapper) return;
 
-toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('collapsed');
-});
+    const toggleBtn = wrapper.querySelector('.toggle-btn');
+    const sidebar = wrapper.querySelector('.sidebar');
+    if (toggleBtn && sidebar) {
+      toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+    }
 
-// MAKE SIDEBAR MENU CLICKABLE WITH TOGGLE BEHAVIOR
-const menuItems = document.querySelectorAll('.menu li');
-
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        // Remove active class from all menu items
-        menuItems.forEach(i => i.classList.remove('active'));
-
-        // Add active class to clicked item
-        item.classList.add('active');
-
-        // Determine page based on menu text
-        let page = item.getAttribute('data-link');
-        const menuName = item.textContent.trim();
-
-        if (menuName === 'Dashboard') {
-            page = '/templates/dashboard/dashboard.html';
-        } else if (menuName === 'Community') {
-            page = '/templates/community/community.html';
-        } else if (menuName === 'Tasks') {
-            page = '/templates/tasks/task.html';
+    // UNIVERSAL MENU LOGIC
+    const menuItems = wrapper.querySelectorAll('.menu li');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.dataset.target;
+        if (target && window.App?.show) {
+          window.App.show(target);
         }
-
-        // Redirect to the page
-        if (page) {
-            window.location.href = page;
-        }
+      });
     });
-});
+
+    console.log("Tasks initialized");
+  }
+
+  window.App?.registerInitFn("tasks-template", initTasks);
+})();
