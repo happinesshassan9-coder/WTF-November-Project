@@ -6,7 +6,6 @@ body {
     display: flex;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 260px;
     height: 100vh;
@@ -94,7 +93,6 @@ body {
     color: #c0392b;
 }
 
-/* MAIN SECTION */
 .main {
     margin-left: 260px;
     padding: 30px;

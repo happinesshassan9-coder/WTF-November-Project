@@ -1,4 +1,4 @@
-/* template/login.css - login specific overrides */
+
 .auth-card{max-width:380px;margin:0 auto}
 .tab{font-size:15px}
 .input input{font-size:14px}
@@ -14,7 +14,6 @@
 }
 
 
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,7 +37,7 @@ body {
   padding: 32px;
 }
 
-/* Layout */
+
 .app-shell {
   width: 100%;
   max-width: var(--max-width);
@@ -82,7 +81,7 @@ body {
   justify-content: center;
 }
 
-/* Headings / tabs */
+
 .h1 {
   font-size: 20px;
   font-weight: 700;
@@ -122,7 +121,6 @@ body {
   border-bottom-color: var(--accent-yellow);
 }
 
-/* Form / inputs */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -174,7 +172,7 @@ body {
   display: block;
 }
 
-/* Text helpers & error */
+
 .helper {
   font-size: 12px;
   color: var(--muted);
@@ -185,7 +183,7 @@ body {
   color: #d9534f;
 }
 
-/* Buttons */
+
 .btn {
   width: 100%;
   padding: 12px;
@@ -207,7 +205,7 @@ body {
   color: var(--text);
 }
 
-/* Help row */
+
 .help-row {
   display: flex;
   justify-content: space-between;
@@ -216,7 +214,7 @@ body {
   gap: 10px;
 }
 
-/* Small adjustments */
+
 .icon-inline {
   width: var(--icon-xsmall);
   height: var(--icon-xsmall);

@@ -9,12 +9,12 @@
 
 <body>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="brand">
-            <img src="assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
-            <span class="brand-text">TaskMaster</span>
-        </div>
+
+ <aside class="sidebar">
+       <div class="brand" onclick="window.location.href='/templates/dashboard/dashboard.html'" style="cursor:pointer;">
+    <img src="../../assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
+    <span class="brand-text">TaskMaster</span>
+</div>
 
         <div class="user-box">
             <div class="avatar">H</div>
@@ -25,45 +25,58 @@
         </div>
 
        <ul class="menu">
-  <li data-link="dashboard.html" class="active">
-    <img class="menu-icon" src="assets/images/dashboard.png" alt="">
+
+ <li data-link="dashboard.html" class="active">
+  <a href="/templates/dashboard/dashboard.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/dashboard.png" alt="">
     <span>Dashboard</span>
-  </li>
-  <li data-link="tasks.html">
-    <img class="menu-icon" src="assets/images/task.png" alt="">
+  </a>
+</li>
+
+<li data-link="tasks.html">
+  <a href="/templates/tasks/tasks.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/task.png" alt="">
     <span>Tasks</span>
-  </li>
-  <li data-link="community.html">
-    <img class="menu-icon" src="assets/images/community.png" alt="">
+  </a>
+</li>
+
+<li data-link="community.html">
+  <a href="/templates/community/community.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/community.png" alt="">
     <span>Community</span>
-  </li>
+  </a>
+</li>
+
   <li data-link="expenses.html">
-    <img class="menu-icon" src="assets/images/expense.png" alt="">
-    <span>Expenses</span>
-  </li>
-  <li data-link="notes.html">
-    <img class="menu-icon" src="assets/images/notes.png" alt="">
-    <span>Notes</span>
-  </li>
-  <li data-link="settings.html">
-    <img class="menu-icon" src="assets/images/settings.png" alt="">
-    <span>Settings</span>
-  </li>
-</ul>
+  <img class="menu-icon" src="../../assets/images/expense.png" alt="">
+  <span>Expenses</span>
+</li>
 
-        <button class="logout">
-            <img class="menu-icon" src="assets/images/logout.png" alt="Logout Icon">
-            <span>Logout</span>
-        </button>
+<li data-link="notes.html">
+  <img class="menu-icon" src="../../assets/images/notes.png" alt="">
+  <span>Notes</span>
+</li>
+
+<li data-link="settings.html">
+  <img class="menu-icon" src="../../assets/images/settings (9).png" alt="">
+  <span>Settings</span>
+</li>
+
+<button class="logout">
+    <img class="menu-icon" src="../../assets/images/logout.png" alt="Logout">
+    <span>Logout</span>
+</button>
+
     </aside>
-
-    <!-- TOP BAR -->
+    
+ 
+    
     <header class="topbar">
         <button class="toggle-btn">&#9776;</button>
         <h2>Tasks</h2>
     </header>
 
-    <!-- MAIN TASK CONTENT -->
+
     <main class="task-container">
 
         <div class="task-header">
@@ -73,7 +86,7 @@
 
         <div class="task-stats">
             <div class="task-card">
-                <img src="assets/images/progress.png" class="task-icon" alt="In Progress Icon">
+                <img src="../../assets/images/task.png" class="task-icon" alt="In Progress Icon">
                 <div>
                     <h4>In Progress</h4>
                     <p>8 tasks</p>
@@ -81,7 +94,7 @@
             </div>
 
             <div class="task-card">
-                <img src="assets/images/completed.png" class="task-icon" alt="Completed Icon">
+                <img src="../../assets/images/notes.png" class="task-icon" alt="Completed Icon">
                 <div>
                     <h4>Completed</h4>
                     <p>12 tasks</p>
@@ -93,24 +106,23 @@
             <h3>Recent Tasks</h3>
 
             <div class="task-item">
-                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <img src="../../assets/images/task.png" class="small-icon" alt="Task Icon">
                 <span>Design homepage UI</span>
             </div>
 
             <div class="task-item">
-                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <img src="../../assets/images/task.png" class="small-icon" alt="Task Icon">
                 <span>Create user onboarding flow</span>
             </div>
 
             <div class="task-item">
-                <img src="assets/images/task.png" class="small-icon" alt="Task Icon">
+                <img src="../../assets/images/task.png" class="small-icon" alt="Task Icon">
                 <span>Optimize dashboard responsiveness</span>
             </div>
 
         </section>
 
     </main>
-<script src="assets/js/sidebar.js"></script>
     <script src="tasks.js"></script>
 </body>
 </html>

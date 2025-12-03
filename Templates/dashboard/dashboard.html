@@ -11,12 +11,11 @@
 
 <div class="container">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
-        <div class="brand">
-            <img src="assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
-            <span class="brand-text">TaskMaster</span>
-        </div>
+       <div class="brand" onclick="window.location.href='/templates/dashboard/dashboard.html'" style="cursor:pointer;">
+    <img src="../../assets/images/bg.png.jpg" class="brand-icon" alt="brand logo">
+    <span class="brand-text">TaskMaster</span>
+</div>
 
         <div class="user-box">
             <div class="avatar">H</div>
@@ -27,40 +26,51 @@
         </div>
 
        <ul class="menu">
-  <li data-link="dashboard.html" class="active">
-    <img class="menu-icon" src="assets/images/dashboard.png" alt="">
+
+ <li data-link="dashboard.html" class="active">
+  <a href="/templates/dashboard/dashboard.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/dashboard.png" alt="">
     <span>Dashboard</span>
-  </li>
-  <li data-link="tasks.html">
-    <img class="menu-icon" src="assets/images/task.png" alt="">
+  </a>
+</li>
+
+<li data-link="tasks.html">
+  <a href="/templates/tasks/tasks.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/task.png" alt="">
     <span>Tasks</span>
-  </li>
-  <li data-link="community.html">
-    <img class="menu-icon" src="assets/images/community.png" alt="">
+  </a>
+</li>
+
+<li data-link="community.html">
+  <a href="/templates/community/community.html" style="text-decoration:none; color:inherit;">
+    <img class="menu-icon" src="../../assets/images/community.png" alt="">
     <span>Community</span>
-  </li>
+  </a>
+</li>
+
   <li data-link="expenses.html">
-    <img class="menu-icon" src="assets/images/expense.png" alt="">
-    <span>Expenses</span>
-  </li>
-  <li data-link="notes.html">
-    <img class="menu-icon" src="assets/images/notes.png" alt="">
-    <span>Notes</span>
-  </li>
-  <li data-link="settings.html">
-    <img class="menu-icon" src="assets/images/settings (9).png" alt="">
-    <span>Settings</span>
-  </li>
-</ul>
+  <img class="menu-icon" src="../../assets/images/expense.png" alt="">
+  <span>Expenses</span>
+</li>
 
+<li data-link="notes.html">
+  <img class="menu-icon" src="../../assets/images/notes.png" alt="">
+  <span>Notes</span>
+</li>
 
-        <button class="logout">
-            <img class="menu-icon" src="assets/images/logout.png" alt="">
-            <span>Logout</span>
-        </button>
+<li data-link="settings.html">
+  <img class="menu-icon" src="../../assets/images/settings (9).png" alt="">
+  <span>Settings</span>
+</li>
+
+<button class="logout">
+    <img class="menu-icon" src="../../assets/images/logout.png" alt="Logout">
+    <span>Logout</span>
+</button>
+
     </aside>
 
-    <!-- MAIN CONTENT -->
+
     <main class="dashboard">
 
         <h1>Good morning, Happiness Hassan!</h1>
@@ -71,7 +81,7 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <span class="stat-title">
-                        <img class="stat-icon" src="assets/images/task.png" alt="statistics">
+                        <img class="stat-icon" src="../../assets/images/task.png" alt="statistics">
                         Active Tasks
                     </span>
                 </div>
@@ -82,7 +92,7 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <span class="stat-title">
-                        <img class="stat-icon" src="assets/images/expense.png" alt="Expenses">
+                        <img class="stat-icon" src="../../assets/images/expense.png" alt="Expenses">
                         Total Expenses
                     </span>
                 </div>
@@ -93,7 +103,7 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <span class="stat-title">
-                        <img class="stat-icon" src="assets/images/notes.png" alt="notes">
+                        <img class="stat-icon" src="../../assets/images/notes.png" alt="notes">
                         Total Notes
                     </span>
                 </div>
@@ -104,7 +114,7 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <span class="stat-title">
-                        <img class="stat-icon" src="assets/images/statistics.png" alt="completion icon">
+                        <img class="stat-icon" src="../../assets/images/statistics.png" alt="completion icon">
                         Completion Rate
                     </span>
                 </div>
@@ -118,7 +128,7 @@
             
             <div class="recent-tasks">
                 <div class="rt-header">
-                    <img class="stat-icon" src="assets/images/task.png" alt="task">
+                    <img class="stat-icon" src="../../assets/images/task.png" alt="task">
                     <span>Recent Tasks</span>
                 </div>
 
@@ -131,7 +141,7 @@
                 <h3>Quick Actions</h3>
 
                 <div class="qa-item">
-                    <img src="assets/images/task.png" alt="Action task">
+                    <img src="../../assets/images/task.png" alt="Action task">
                     <div>
                         <h4>Create New Task</h4>
                         <p>Add a task to your list</p>
@@ -139,7 +149,7 @@
                 </div>
 
                 <div class="qa-item">
-                    <img src="assets/images/expense.png" alt="expenses">
+                    <img src="../../assets/images/expense.png" alt="expenses">
                     <div>
                         <h4>Track Expense</h4>
                         <p>Record a new expense</p>
@@ -147,7 +157,7 @@
                 </div>
 
                 <div class="qa-item">
-                    <img src="assets/images/notes.png" alt="notes">
+                    <img src="../../assets/images/notes.png" alt="notes">
                     <div>
                         <h4>Write Note</h4>
                         <p>Capture your thoughts</p>
@@ -159,7 +169,7 @@
 
     </main>
 </div>
-<!-- Example: dashboard.html -->
+
 <script src="dashboard.js"></script>
 </body>
 </html>

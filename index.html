@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TaskMaster</title>
 
-  <!-- Global styles -->
+  
   <link rel="stylesheet" href="assets/CSS/global.css">
 
-  <!-- Page-level Template Styles -->
+  
   <link rel="stylesheet" href="templates/dashboard/dashboard.css">
   <link rel="stylesheet" href="templates/background/background.css">
 </head>
@@ -19,23 +19,21 @@
     <div id="templates-root"></div>
   </div>
 
-  <!-- Global JS -->
+  
   <script src="assets/js/global.js"></script>
 
-  <!-- Your main JS (combined sidebar + community + dashboard nav) -->
+  
   <script src="dashboard.js"></script>
 
   <script>
     (function loadTemplates() {
       const root = document.getElementById("templates-root");
 
-      // Each template is now responsible for bringing its own sidebar (inside its HTML file)
       const templates = [
         { path: "templates/loginpage/login.html",       id: "login-template" },
         { path: "templates/signuppage/signup.html",     id: "signup-template" },
         { path: "templates/dashboard/dashboard.html",   id: "dashboard-template" },
-        { path: "templates/tasks/tasks.html",           id: "tasks-template" },
-        { path: "templates/community/community.html",   id: "community-template" },
+       
       ];
 
       function fetchText(path) {
@@ -45,7 +43,7 @@
         });
       }
 
-      // Load the templates
+      
       Promise.all(
         templates.map(t => 
           fetchText(t.path).then(html => ({ id: t.id, html }))
@@ -61,16 +59,13 @@
           root.appendChild(wrapper);
         });
 
-        // Default view — login or dashboard
+        
         const loggedIn = window.App?.getLoggedIn?.();
         const defaultView = loggedIn ? "dashboard-template" : "login-template";
 
         const firstView = document.getElementById(defaultView);
         if (firstView) firstView.style.display = "block";
 
-        // IMPORTANT:
-        // We REMOVE the old sidebar.js injection completely
-        // because each template now has its own sidebar inside it.
       })
       .catch(error => {
         console.error(error);
